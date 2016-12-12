@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <header>
+            <div class="mainHeader row">
+                <div class="col s2 menuBut waves-effect waves-dark">
+                    <span class="fa fa-bars"></span>
+                </div>
+                <div class="col s10 appHead">
+                    <span>108 Emergency Service</span>
+                </div>
+            </div>
+            <div class="subHeader row">
+                <a href="index2.html" class="col s2 backBut waves-effect">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+                <div class="text-center col s10 subHeader-ing">
+                    CURRENT CASES
+                </div>
+            </div>
+        </header>
+        <div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content row searchBar">
+                            <input type="text" class="col s9 searchForm" placeholder="Search a Service">
+                            <div class="col s3 searchIcons">
+                                <span class="fa fa-search searchIcon waves-effect"></span>
+                                <span class="fa fa-filter filterIcon waves-effect"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content row caseDetails">
+                            <div class="priorityBar col s1"></div>
+                            <div class="row caseDetWrap col s11">
+                                <div class="col s10 caseDet">
+                                    <div class="caseCateg truncate">Heart Attack</div>
+                                    <div class="caseType">Medical</div>
+                                    <div class="caseNoUnit">
+                                        <span>No. of Units: </span><span>1</span>
+                                    </div>
+                                </div>
+                                <div class="col s2 caseDistWrap">
+                                    <span class="caseDist">2km</span>
+                                </div>
+                                <div class="col s12 row caseDescrap">
+                                    <div class="col s8 caseDescCont">
+                                        <p>But also removes borders on the left and right, and any border-radius which may...</p>
+                                    </div>
+                                    <div class="col s4 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callVictim"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content row caseDetails">
+                            <div class="priorityBar col s1" style="background: #1567a9;"></div>
+                            <div class="row caseDetWrap col s11">
+                                <div class="col s10 caseDet">
+                                    <div class="caseCateg truncate">Street Fight</div>
+                                    <div class="caseType">Police</div>
+                                    <div class="caseNoUnit">
+                                        <span>No. of Units: </span><span>1</span>
+                                    </div>
+                                </div>
+                                <div class="col s2 caseDistWrap">
+                                    <span class="caseDist">5km</span>
+                                </div>
+                                <div class="col s12 row caseDescrap">
+                                    <div class="col s8 caseDescCont">
+                                        <p>But also removes borders on the left and right, and any border-radius which may...</p>
+                                    </div>
+                                    <div class="col s4 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callVictim"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-content row caseDetails">
+                            <div class="priorityBar col s1" style="background: #4CAF50;"></div>
+                            <div class="row caseDetWrap col s11">
+                                <div class="col s10 caseDet">
+                                    <div class="caseCateg truncate">Accident</div>
+                                    <div class="caseType">Multi-Service</div>
+                                    <div class="caseNoUnit">
+                                        <span>No. of Units: </span><span>1</span>
+                                    </div>
+                                </div>
+                                <div class="col s2 caseDistWrap">
+                                    <span class="caseDist">2km</span>
+                                </div>
+                                <div class="col s12 row caseDescrap">
+                                    <div class="col s8 caseDescCont">
+                                        <p>But also removes borders on the left and right, and any border-radius which may...</p>
+                                    </div>
+                                    <div class="col s4 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callVictim"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function() {
+
+            document.getElementById("callVictim").addEventListener("click", myFunction2);
+
+            function myFunction2() {
+                alert('callRequest');
+                window.plugins.CallNumber.callNumber(onSuccessCall, onErrorCall, 8891704030, false);
+            }
+
+            function onSuccessCall(result){
+                console.log ( 'Success' );
+            }
+
+            function onErrorCall(result) {
+                console.log ( 'Failed' );
+            }
+        }
+        </script>
+    </body>
+</html>

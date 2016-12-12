@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function() {
+
+            document.getElementById("callThem").addEventListener("click", myFunction2);
+            document.getElementById("callOrg").addEventListener("click", myFunction1);
+            function myFunction2() {
+                alert('callRequest');
+                window.plugins.CallNumber.callNumber(onSuccessCall, onErrorCall, 8891704030, false);
+            }
+            function myFunction1() {
+                alert('callRequest');
+                window.plugins.CallNumber.callNumber(onSuccessCall, onErrorCall, 8891704030, false);
+            }
+            function onSuccessCall(result){
+                console.log ( 'Success' );
+            }
+
+            function onErrorCall(result) {
+                console.log ( 'Failed' );
+            }
+        }
+        </script>
+    </head>
+    <body>
+        <header>
+            <div class="mainHeader row">
+                <div class="col s2 menuBut waves-effect waves-dark">
+                    <span class="fa fa-bars"></span>
+                </div>
+                <div class="col s10 appHead">
+                    <span>108 Emergency Service</span>
+                </div>
+            </div>
+            <div class="subHeader row" id="homeSubHeader">
+                <ul class="tabs row homeTab">
+                    <li class="tab col s6 homeTabElements"><a class="active waves-effect waves-dark" href="#home">HOME</a></li>
+                    <li class="tab col s6 homeTabElements"><a href="#search" class="waves-effect waves-dark">SEARCH</a></li>
+                </ul>
+            </div>
+        </header>
+        <div>
+            <div id="home">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content topCard row">
+                               <div class="col s3 valign-wrapper pointsBlock">
+                                   <span class="valign points">999</span>
+                               </div>
+                               <div class="col s9 valign-wrapper pointsTextBlock">
+                                    <span class="pointsText">Points</span>
+                                    <div class="moreBut waves-effect">MORE</div>
+                               </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <a href="caseReg.html" class="card waves-effect ourCardSet">
+                            <div class="card-content optionCard row firstOption">
+                               <div class="col s3 valign-wrapper iconPart">
+                                   <span class="fa fa-warning getHelpIcon"></span>
+                               </div>
+                               <div class="col s9 actionDescPartWrap valign-wrapper">
+                                    <div class="actionDescPart">
+                                        <div class="actionHead">Get Help</div>
+                                        <p class="actionDescri">Request for an Emergency Service near by your current location</p>
+                                    </div>
+                               </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col s12">
+                        <a href="caseSearch.html" class="card waves-effect ourCardSet">
+                            <div class="card-content optionCard row">
+                               <div class="col s3 valign-wrapper iconPart">
+                                   <span class="fa fa-heartbeat saveLifeIcon"></span>
+                               </div>
+                               <div class="col s9 actionDescPartWrap valign-wrapper">
+                                    <div class="actionDescPart">
+                                        <div class="actionHead">Save Life</div>
+                                        <p class="actionDescri">Help a person near to your current location, Credit Points will be awarded</p>
+                                    </div>
+                               </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <a class="btn-floating btn-large waves-effect waves-light green callBut1"><span class="fa fa-phone"></span></a>
+            </div>
+            <div id="search">
+                <div class="row">
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content row searchBar">
+                                <input type="text" class="col s9 searchForm" placeholder="Search a Service">
+                                <div class="col s3 searchIcons">
+                                    <span class="fa fa-search searchIcon waves-effect"></span>
+                                    <span class="fa fa-filter filterIcon waves-effect"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content row orgDetails">
+                                <div class="col s2 orgLogoWrap">
+                                    <img src="img/Almas.jpg" class="orgLogo responsive-img">
+                                </div>
+                                <div class="col s10 row orgFurtherDet">
+                                    <div class="col s10 orgBasicDet">
+                                        <div class="orgName truncate">Al-Mas Hospital, Kottakkal</div>
+                                        <div class="orgType">Medical</div>
+                                        <div class="orgAddrWrap">
+                                            <p class="orgAddr">Chenguvetty,
+                                            Kottakkal,
+                                            Malappuram</p>
+                                        </div>
+                                    </div>
+                                    <div class="col s2 orgDistWrap">
+                                        <span class="orgDist">2km</span>
+                                    </div>
+                                    <div class="col s12 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callOrg"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content row orgDetails">
+                                <div class="col s2 orgLogoWrap">
+                                    <img src="img/KPolice.jpg" class="orgLogo responsive-img">
+                                </div>
+                                <div class="col s10 row orgFurtherDet">
+                                    <div class="col s10 orgBasicDet">
+                                        <div class="orgName truncate">Janamythri Police Station, Kottakkal</div>
+                                        <div class="orgType">Police</div>
+                                        <div class="orgAddrWrap">
+                                            <p class="orgAddr">Kottakkal,
+                                            Kadampuzha Road,
+                                            Malappuram</p>
+                                        </div>
+                                    </div>
+                                    <div class="col s2 orgDistWrap">
+                                        <span class="orgDist">5km</span>
+                                    </div>
+                                    <div class="col s12 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callOrg"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content row orgDetails">
+                                <div class="col s2 orgLogoWrap">
+                                    <img src="img/FForce.jpg" class="orgLogo responsive-img">
+                                </div>
+                                <div class="col s10 row orgFurtherDet">
+                                    <div class="col s10 orgBasicDet">
+                                        <div class="orgName truncate">Fire Force Department, Tirur</div>
+                                        <div class="orgType">Fireforce</div>
+                                        <div class="orgAddrWrap">
+                                            <p class="orgAddr">Near Bus Stand,
+                                            Tirur,
+                                            Malappuram</p>
+                                        </div>
+                                    </div>
+                                    <div class="col s2 orgDistWrap">
+                                        <span class="orgDist">22km</span>
+                                    </div>
+                                    <div class="col s12 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callOrg"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12">
+                        <div class="card">
+                            <div class="card-content row orgDetails">
+                                <div class="col s2 orgLogoWrap">
+                                    <img src="img/Almas.jpg" class="orgLogo responsive-img">
+                                </div>
+                                <div class="col s10 row orgFurtherDet">
+                                    <div class="col s10 orgBasicDet">
+                                        <div class="orgName truncate">MIMS Hospital, Chenguvetty</div>
+                                        <div class="orgType">Medical</div>
+                                        <div class="orgAddrWrap">
+                                            <p class="orgAddr">Chenguvetty,
+                                            Kottakkal,
+                                            Malappuram</p>
+                                        </div>
+                                    </div>
+                                    <div class="col s2 orgDistWrap">
+                                        <span class="orgDist">2km</span>
+                                    </div>
+                                    <div class="col s12 iconSet">
+                                        <span class="fa fa-phone callOrg waves-effect" id="callOrg"></span>
+                                        <span class="fa fa-map-marker navTOOrg waves-effect"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+    </body>
+</html>

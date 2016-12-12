@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no"> -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function() {
+
+                document.getElementById("callThem").addEventListener("click", myFunction2);
+
+                function myFunction2() {
+                    window.plugins.CallNumber.callNumber(onSuccessCall, onErrorCall, 8891704030, false);
+                }
+
+                function onSuccessCall(result){
+                    console.log ( 'Success' );
+                }
+
+                function onErrorCall(result) {
+                    console.log ( 'Failed' );
+                }
+
+
+                document.getElementById("backButton").addEventListener("click", myFunction3);
+
+                function myFunction3() {
+                    map.remove();
+                    document.location.href = 'index2.html';
+                }
+
+                var div = document.getElementById("map_canvas");
+                map = plugin.google.maps.Map.getMap(div);
+                map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+            }, false);
+            
+            function onMapReady() {
+                var onSuccess = function(location) {
+                    var myloc = new plugin.google.maps.LatLng(location.latLng.lat, location.latLng.lng);
+                    map.addMarker({
+                      'position': location.latLng
+                    }, function(marker) {
+                      marker.showInfoWindow();
+                    });
+                    map.animateCamera({
+                      'target': myloc,
+                      'tilt': 60,
+                      'zoom': 18,
+                      'bearing': 140,
+                      'duration': 1000
+                    });
+                };
+                var onError = function() {
+                  alert("error: ");
+                };
+                map.getMyLocation(onSuccess, onError);
+            }
+
+            // var previouspage = window.sessionStorage.getItem("page"):
+            // if (previousPage == undefined){
+            //     document.location.href = 'index.html';
+            // }
+            // var currentPage = window.location.href;
+            // window.sessionStorage.setItem("page",currentPage);
+
+        </script>
+    </head>
+    <body>
+        <header class="z-depth-3">
+            <div class="mainHeader row">
+                <div class="col s2 menuBut waves-effect waves-dark">
+                    <span class="fa fa-bars"></span>
+                </div>
+                <div class="col s10 appHead">
+                    <span>108 Emergency Service</span>
+                </div>
+            </div>
+            <div class="subHeader row">
+                <div class="col s2 backBut waves-effect" id="backButton">
+                    <span class="fa fa-chevron-left"></span>
+                </div>
+                <div class="text-center col s10 subHeader-ing row valign-wrapper">
+                    <div class="col s6 caseDetailsMap">
+                        <div class="caseType">Accident</div>
+                        <div class="caseTakenFor">Police</div>
+                    </div>
+                    <div class="col s6 caseHelpingDet">
+                        <div>Helping: <span>1 Person</span></div>
+                        <div>Remaining: <span>1 Person</span></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <div id="map_canvas">
+            <a class="btn-floating btn-large waves-effect white callBut2 valign-wrapper" id='callThem'><span class="fa fa-phone"></span></a>
+            <div class="footerPartMap row z-depth-3">
+                <div class="col s3 totalDistTime valign-wrapper">
+                    <div class="row marginBotZero">
+                        <div class="col s12 totalTimeMap">7 min</div>
+                        <div class="col s12 totalDistMap">2.2 km</div>
+                    </div>
+                </div>
+                <div class="col s6 nextAction valign-wrapper">
+                    <div class="row marginBotZero destiPath">
+                        <span class="col s3 iconTransAction fa fa-share"></span>
+                        <span class="col s9 transAction">Turn Right</span>
+                    </div>
+                </div>
+                <div class="col s3 nextActDist valign-wrapper"><span>200m</span></div>
+            </div>
+        </div>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+    </body>
+</html>
