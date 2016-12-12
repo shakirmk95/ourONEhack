@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href="css/materialize.css">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+    </head>
+    <body>
+        <header>
+            <div class="mainHeader row">
+                <div class="col s2 menuBut waves-effect waves-dark">
+                    <span class="fa fa-bars"></span>
+                </div>
+                <div class="col s10 appHead">
+                    <span>108 Emergency Service</span>
+                </div>
+            </div>
+            <div class="subHeader row">
+                <a href="index2.html" class="col s2 backBut waves-effect">
+                    <span class="fa fa-chevron-left"></span>
+                </a>
+                <div class="text-center col s10 subHeader-ing">
+                    CASE REGISTRY
+                </div>
+            </div>
+        </header>
+        <div>
+            <div class="caution">
+                <span>CAUTION: Location is set to current location, else use call button</span>
+            </div>
+            <form class="container">
+                <div class="row valign-wrapper bottomTen"><!-- 
+                    <label class="col s4 valign">Type</label> -->
+                    <select class="formSelect">
+                        <option value="" disabled selected>Type</option>
+                        <option value="1">Medical</option>
+                        <option value="2">Fire Force</option>
+                        <option value="3">Police</option>
+                    </select>
+                </div>
+                <div class="row valign-wrapper bottomTen"><!-- 
+                    <label class="col s4 valign">Category</label> -->
+                    <select class="formSelect">
+                        <option value="" disabled selected>Category</option>
+                        <option value="1">Heart Attack</option>
+                        <option value="2">Accident</option>
+                        <option value="3">Emergency</option>
+                    </select>
+                </div>
+                <div class="row valign-wrapper bottomTen"><!-- 
+                    <label for="noOfUnit" class="col s4 valign">No. of Units</label> -->
+                    <input type="number" id="noOfUnit" class="formInput" placeholder="No. of Units">
+                </div>
+                <div class="row browser-default bottomTen">
+                    <textarea id="Desc" class="formInput" placeholder="Description" row="5"></textarea>
+                </div>
+                <div class="row">
+                    <a class="waves-effect waves-light btn col s12 subBut">Submit</a>
+                </div>
+            </form>
+        </div>
+        <footer>
+            <div>
+                <a class="btn-floating btn-large waves-effect waves-light green callBut1" id="call108"><span class="fa fa-phone"></span></a>
+            </div>
+        </footer>
+        <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/materialize.js"></script>
+        <script type="text/javascript">
+            document.addEventListener("deviceready", function() {
+                document.getElementById("call108").addEventListener("click", myFunction2);
+
+            function myFunction2() {
+                alert('callRequest');
+                window.plugins.CallNumber.callNumber(onSuccessCall, onErrorCall, 8891704030, false);
+            }
+
+            function onSuccessCall(result){
+                console.log ( 'Success' );
+            }
+
+            function onErrorCall(result) {
+                console.log ( 'Failed' );
+            }
+        }
+        </script>
+    </body>
+</html>
